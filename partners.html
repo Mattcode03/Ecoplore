@@ -141,9 +141,38 @@
       <a href="#" class="hidden md:block text-sm font-semibold text-gray-700 hover:text-green-800 transition-colors">Sign In</a>
       <a href="#apply" class="hidden md:block px-4 py-2 rounded-lg text-sm font-semibold text-white transition-colors"
          style="background:#2d6a4f;">Apply now</a>
+      <!-- Burger button (mobile only) -->
+      <button id="burger" onclick="toggleMenu()" class="md:hidden flex flex-col justify-center items-center w-9 h-9 gap-1.5 rounded-lg hover:bg-gray-100 transition-colors">
+        <span id="b1" class="block w-5 h-0.5 bg-gray-700 transition-all duration-200"></span>
+        <span id="b2" class="block w-5 h-0.5 bg-gray-700 transition-all duration-200"></span>
+        <span id="b3" class="block w-5 h-0.5 bg-gray-700 transition-all duration-200"></span>
+      </button>
     </div>
   </div>
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100 bg-white px-6 py-4 flex flex-col gap-4">
+    <a href="property-detail.html" class="text-sm font-medium text-gray-700">Home</a>
+    <a href="property-detail.html" class="text-sm font-medium text-gray-700">Hotels</a>
+    <a href="#" class="text-sm font-medium text-gray-700">Destinations</a>
+    <a href="#" class="text-sm font-medium text-gray-700">Packages</a>
+    <a href="partners.html" class="text-sm font-semibold" style="color:#2d6a4f;">For Travel Agents</a>
+    <a href="#" class="text-sm font-semibold text-gray-700">Sign In</a>
+    <a href="#apply" class="text-center py-3 rounded-lg text-sm font-semibold text-white" style="background:#2d6a4f;">Apply now</a>
+  </div>
 </header>
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('mobile-menu');
+    const b1 = document.getElementById('b1');
+    const b2 = document.getElementById('b2');
+    const b3 = document.getElementById('b3');
+    const open = !menu.classList.contains('hidden');
+    menu.classList.toggle('hidden');
+    b1.style.transform = open ? '' : 'translateY(8px) rotate(45deg)';
+    b2.style.opacity   = open ? '' : '0';
+    b3.style.transform = open ? '' : 'translateY(-8px) rotate(-45deg)';
+  }
+</script>
 
 
 <!-- ═══════════════════════════════════════════════════ HERO -->
